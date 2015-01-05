@@ -1,4 +1,0 @@
-myapp
-=====
-
-test my app
