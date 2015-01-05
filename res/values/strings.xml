@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">AiFengQiang</string>
+    <string name="app_title">爱疯抢</string>
+    <string name="location">定位></string>
+    <string name="show">展示</string>
+    <string name="hello_world">Hello world!</string>
+</resources>
