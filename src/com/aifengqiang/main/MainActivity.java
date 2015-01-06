@@ -37,11 +37,11 @@ public class MainActivity extends Activity {
 		nv.setNavigationViewListener(nvl);
 		
 		MenuView mv = (MenuView)findViewById(R.id.main_menu_view);
-		mv.setItem(0, R.drawable.ic_launcher, 1);
-		mv.setItem(1, R.drawable.ic_launcher, 1);
-		mv.setItem(2, R.drawable.ic_launcher, 2);
-		mv.setItem(3, R.drawable.ic_launcher, 1);
-		mv.setItem(4, R.drawable.ic_launcher, 1);
+		mv.setItem(0, R.drawable.ic_launcher, 1, "首页");
+		mv.setItem(1, R.drawable.ic_launcher, 1, "订单");
+		mv.setItem(2, R.drawable.ic_launcher, 2, "确认");
+		mv.setItem(3, R.drawable.ic_launcher, 1, "我的");
+		mv.setItem(4, R.drawable.ic_launcher, 1, "更多");
 		
 		MenuView.MenuViewListener mnl = new MenuView.MenuViewListener() {
 			
