@@ -1,6 +1,7 @@
 package com.aifengqiang.main;
 
 import com.aifengqiang.main.R;
+import com.aifengqiang.ui.FoodKindListView;
 import com.aifengqiang.ui.MenuView;
 import com.aifengqiang.ui.NavigationView;
 
@@ -8,9 +9,17 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnLayoutChangeListener;
+import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
+import android.widget.Gallery;
+import android.widget.ScrollView;
 
 public class MainActivity extends Activity {
+	public int activityHeight;
+	public int navViewHeight;
+	public int menuViewHeight;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +61,16 @@ public class MainActivity extends Activity {
 			}
 		};
 		mv.setMenuViewListener(mnl);
+		
+		Gallery gallery = (Gallery)findViewById(R.id.main_gallery_view);
+		
+		
+		
+		FoodKindListView fklv = (FoodKindListView)findViewById(R.id.main_list_view);
+		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
 	}
 }
