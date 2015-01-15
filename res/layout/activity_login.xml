@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ededed">
+    
+	<com.aifengqiang.ui.NavigationView
+	    android:id="@+id/login_nav_view" 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    ></com.aifengqiang.ui.NavigationView>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/input_bg"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="15dp"
+	    android:layout_marginBottom="15dp"
+	    android:orientation="vertical"
+	    >
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="50dp"
+	        android:layout_marginLeft="12dp"
+	        android:layout_marginRight="12dp"
+	        android:orientation="horizontal"
+	        android:gravity="center_vertical"
+	        android:layout_weight="1">
+	        <ImageView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/icon_iphone"
+	            android:layout_marginRight="3dp"/>
+	        <EditText
+	            android:id="@+id/login_tel_num_text"
+	            android:textColorHint="#cccccc"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:background="#00000000"
+	            android:hint="@string/telephonenumber"
+	            android:inputType="phone"
+	            android:maxLength="11"/>
+	    </LinearLayout>
+	    <LinearLayout
+	        android:layout_height="0.5dp"
+	        android:layout_width="match_parent"
+	        android:layout_marginLeft="12dp"
+	        android:layout_marginRight="12dp"
+	        android:background="#dedede"
+	        android:gravity="center_vertical"></LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="50dp"
+	        android:layout_marginLeft="12dp"
+	        android:layout_marginRight="12dp"
+	        android:layout_weight="1"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal" >
+
+	        <ImageView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginRight="3dp"
+	            android:src="@drawable/icon_lock" />
+
+	        <EditText
+	            android:id="@+id/login_check_num_text"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:background="#00000000"
+	            android:hint="@string/inputchecknumber"
+	            android:inputType="number"
+	            android:maxLength="6"
+	            android:textColorHint="#cccccc" />
+
+	        <Button
+	            android:id="@+id/login_check_num_btn"
+	            android:layout_width="100dp"
+	            android:layout_height="40dp"
+	            android:background="@drawable/btn_code_bg"
+	            android:layout_marginTop="2dp"
+	            android:text="@string/checknumber"
+	            android:textColor="#f88727" />
+	    </LinearLayout>
+
+	</LinearLayout>
+	<Button 
+	    android:id="@+id/login_submit"
+	    android:background="@drawable/login_submit_bg"
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:text="@string/submit"
+	    android:textColor="#ffffff"/>
+</LinearLayout>

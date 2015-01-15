@@ -38,24 +38,24 @@ public class NavigationView extends RelativeLayout implements OnClickListener{
 		
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(-1, -2);
 		this.setLayoutParams(lp);
-		this.setBackgroundColor(Color.BLUE);
+		this.setBackgroundColor(0xfff88727);
 	}
 	
-	public void setLeftButton(String title){
-		setButton(title, NAVIGATION_BUTTON_LEFT);
+	public void setLeftButton(String title, int imagePosition, int imageSourceID){
+		setButton(title, NAVIGATION_BUTTON_LEFT, imagePosition, imageSourceID);
 	}
 	
-	public void setRightButton(String title){
-		setButton(title, NAVIGATION_BUTTON_RIGHT);
+	public void setRightButton(String title, int imagePosition, int imageSourceID){
+		setButton(title, NAVIGATION_BUTTON_RIGHT, imagePosition, imageSourceID);
 	}
 	
-	private void setButton(String title, int buttonId){
-		Button oldButton = (Button) this.findViewWithTag(new Integer(buttonId));
+	private void setButton(String title, int buttonId, int imagePosition, int imageSourceID){
+		NavigationButton oldButton = (NavigationButton) this.findViewWithTag(new Integer(buttonId));
 		if(oldButton != null){
 			this.removeView(oldButton);
 		}
 		
-		Button newButton = new Button(mContext);
+		NavigationButton newButton = new NavigationButton(mContext);
 		newButton.setTag(new Integer(buttonId));
 		newButton.setOnClickListener(this);
 		
@@ -68,10 +68,7 @@ public class NavigationView extends RelativeLayout implements OnClickListener{
 		lp.setMargins(10, 0, 10, 0);
 		newButton.setLayoutParams(lp);
 		
-		newButton.setText(title);
-		newButton.setTextColor(Color.WHITE);
-		newButton.setBackgroundColor(Color.TRANSPARENT);
-		newButton.setTextSize(12);
+		newButton.addButton(title, imagePosition, imageSourceID);
 		this.addView(newButton);
 	}
 	

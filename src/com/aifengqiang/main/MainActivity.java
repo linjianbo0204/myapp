@@ -2,10 +2,13 @@ package com.aifengqiang.main;
 
 import com.aifengqiang.main.R;
 import com.aifengqiang.ui.FoodKindListView;
+import com.aifengqiang.ui.GalleryAdapter;
 import com.aifengqiang.ui.MenuView;
+import com.aifengqiang.ui.NavigationButton;
 import com.aifengqiang.ui.NavigationView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +16,8 @@ import android.view.View;
 import android.view.View.OnLayoutChangeListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 import android.widget.ScrollView;
 
@@ -20,6 +25,7 @@ public class MainActivity extends Activity {
 	public int activityHeight;
 	public int navViewHeight;
 	public int menuViewHeight;
+	MainActivity point = this;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +33,8 @@ public class MainActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		NavigationView nv = (NavigationView)findViewById(R.id.main_nav_view);
-		nv.setLeftButton(getString(R.string.location));
-		nv.setRightButton(getString(R.string.show));
+		nv.setLeftButton(getString(R.string.location),NavigationButton.NAVIGATIONIMAGERIGHT, R.drawable.icon_back_nor);
+		nv.setRightButton(getString(R.string.show),NavigationButton.NAVIGATIONIMAGENONE, 0);
 		nv.setTitle(getString(R.string.app_title));
 		NavigationView.NavigationViewListener nvl = new NavigationView.NavigationViewListener() {
 			@Override
@@ -57,13 +63,27 @@ public class MainActivity extends Activity {
 			@Override
 			public void OnMenuViewClick(int id) {
 				// TODO Auto-generated method stub
-				finish();
+				if(id==2)
+				{
+					Intent it = new Intent(point, LoginActivity.class);
+					startActivity(it);
+				}
 			}
 		};
 		mv.setMenuViewListener(mnl);
 		
 		Gallery gallery = (Gallery)findViewById(R.id.main_gallery_view);
-		
+		gallery.setAdapter(new GalleryAdapter(this));
+		gallery.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		
 		
 		FoodKindListView fklv = (FoodKindListView)findViewById(R.id.main_list_view);
