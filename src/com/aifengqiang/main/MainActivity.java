@@ -52,11 +52,11 @@ public class MainActivity extends Activity {
 		nv.setNavigationViewListener(nvl);
 		
 		MenuView mv = (MenuView)findViewById(R.id.main_menu_view);
-		mv.setItem(0, R.drawable.ic_launcher, 1, "Ê×Ò³");
-		mv.setItem(1, R.drawable.ic_launcher, 1, "¶©µ¥");
-		mv.setItem(2, R.drawable.ic_launcher, 2, "È·ÈÏ");
-		mv.setItem(3, R.drawable.ic_launcher, 1, "ÎÒµÄ");
-		mv.setItem(4, R.drawable.ic_launcher, 1, "¸ü¶à");
+		mv.setItem(0, R.drawable.ic_launcher, 1, "é¦–é¡µ");
+		mv.setItem(1, R.drawable.ic_launcher, 1, "è®¢å•");
+		mv.setItem(2, R.drawable.ic_launcher, 2, "ç¡®è®¤");
+		mv.setItem(3, R.drawable.ic_launcher, 1, "æˆ‘çš„");
+		mv.setItem(4, R.drawable.ic_launcher, 1, "æ›´å¤š");
 		
 		MenuView.MenuViewListener mnl = new MenuView.MenuViewListener() {
 			
@@ -65,8 +65,14 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				if(id==2)
 				{
-					Intent it = new Intent(point, LoginActivity.class);
+					Intent it = new Intent(point, OrderActivity.class);
 					startActivity(it);
+					int version = Integer.valueOf(android.os.Build.VERSION.SDK);
+					if(version >= 5) {
+						overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+						//overridePendingTransition(android.R.anim.decelerate_interpolator,android.R.anim.decelerate_interpolator);Â Â Â Â 
+						//overridePendingTransition(android.R.anim.overshoot_interpolator,android.R.anim.linear_interpolator);Â Â 
+					}
 				}
 			}
 		};
@@ -87,10 +93,10 @@ public class MainActivity extends Activity {
 		
 		
 		FoodKindListView fklv = (FoodKindListView)findViewById(R.id.main_list_view);
-		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
-		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
-		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
-		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
-		fklv.addItem("", "±¾°ï²Ë", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "æœ¬å¸®èœ", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "æœ¬å¸®èœ", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "æœ¬å¸®èœ", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "æœ¬å¸®èœ", "asjacbjkascbakajcbsjak");
+		fklv.addItem("", "æœ¬å¸®èœ", "asjacbjkascbakajcbsjak");
 	}
 }

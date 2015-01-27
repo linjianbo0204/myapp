@@ -29,7 +29,7 @@ public class LoginActivity extends Activity{
 		setContentView(R.layout.activity_login);
 		
 		NavigationView nv = (NavigationView)findViewById(R.id.login_nav_view);
-		nv.setLeftButton(getString(R.string.back), NavigationButton.NAVIGATIONIMAGELEFT, R.drawable.icon_back_nor);
+		nv.setLeftButton(getString(R.string.back), NavigationButton.NAVIGATIONIMAGELEFT, R.drawable.navigation_back_bg);
 		nv.setTitle(getString(R.string.app_title));
 		NavigationView.NavigationViewListener nvl = new NavigationView.NavigationViewListener() {
 			@Override

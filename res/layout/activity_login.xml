@@ -41,6 +41,7 @@
 	            android:background="#00000000"
 	            android:hint="@string/telephonenumber"
 	            android:inputType="phone"
+	            android:textColor="#666666"
 	            android:maxLength="11"/>
 	    </LinearLayout>
 	    <LinearLayout
@@ -75,13 +76,14 @@
 	            android:hint="@string/inputchecknumber"
 	            android:inputType="number"
 	            android:maxLength="6"
+	            android:textColor="#666666"
 	            android:textColorHint="#cccccc" />
 
 	        <Button
 	            android:id="@+id/login_check_num_btn"
 	            android:layout_width="100dp"
 	            android:layout_height="40dp"
-	            android:background="@drawable/btn_code_bg"
+	            android:background="@drawable/login_get_checknum_bg"
 	            android:layout_marginTop="2dp"
 	            android:text="@string/checknumber"
 	            android:textColor="#f88727" />

@@ -10,4 +10,6 @@
     <string name="checknumber">获取验证码</string>
     <string name="back">返回</string>
     <string name="submit">确认</string>
+    <string name="orderbutton">抢我吧</string>
+    <string name="reset">重置</string>
 </resources>
