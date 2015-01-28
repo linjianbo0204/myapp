@@ -10,6 +10,7 @@ import com.aifengqiang.ui.NavigationView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,7 +34,7 @@ public class MainActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		NavigationView nv = (NavigationView)findViewById(R.id.main_nav_view);
-		nv.setLeftButton(getString(R.string.location),NavigationButton.NAVIGATIONIMAGERIGHT, R.drawable.icon_back_nor);
+		nv.setLeftButton(getString(R.string.location),NavigationButton.NAVIGATIONIMAGERIGHT, R.drawable.icon_back_nor_down);
 		nv.setRightButton(getString(R.string.show),NavigationButton.NAVIGATIONIMAGENONE, 0);
 		nv.setTitle(getString(R.string.app_title));
 		NavigationView.NavigationViewListener nvl = new NavigationView.NavigationViewListener() {
@@ -52,11 +53,11 @@ public class MainActivity extends Activity {
 		nv.setNavigationViewListener(nvl);
 		
 		MenuView mv = (MenuView)findViewById(R.id.main_menu_view);
-		mv.setItem(0, R.drawable.ic_launcher, 1, "首页");
-		mv.setItem(1, R.drawable.ic_launcher, 1, "订单");
-		mv.setItem(2, R.drawable.ic_launcher, 2, "确认");
-		mv.setItem(3, R.drawable.ic_launcher, 1, "我的");
-		mv.setItem(4, R.drawable.ic_launcher, 1, "更多");
+		mv.setItem(0, R.drawable.home_pre, 1, "首页", 0);
+		mv.setItem(1, R.drawable.order_nor, 1, "订单", 0);
+		mv.setItem(2, R.drawable.icon_tab_qiang, 2, "抢我",R.drawable.tab_qiang_bg_nor);
+		mv.setItem(3, R.drawable.me_nor, 1, "我的",0);
+		mv.setItem(4, R.drawable.more_nor, 1, "更多",0);
 		
 		MenuView.MenuViewListener mnl = new MenuView.MenuViewListener() {
 			
@@ -66,6 +67,16 @@ public class MainActivity extends Activity {
 				if(id==2)
 				{
 					Intent it = new Intent(point, OrderActivity.class);
+					startActivity(it);
+					int version = Integer.valueOf(android.os.Build.VERSION.SDK);
+					if(version >= 5) {
+						overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+						//overridePendingTransition(android.R.anim.decelerate_interpolator,android.R.anim.decelerate_interpolator);    
+						//overridePendingTransition(android.R.anim.overshoot_interpolator,android.R.anim.linear_interpolator);  
+					}
+				}
+				if(id==3){
+					Intent it = new Intent(point, UserCenterActivity.class);
 					startActivity(it);
 					int version = Integer.valueOf(android.os.Build.VERSION.SDK);
 					if(version >= 5) {

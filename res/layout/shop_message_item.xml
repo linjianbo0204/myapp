@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+    <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="#dedede"></LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="好阳光海味世家"
+                    android:id="@+id/shop_message_name"
+                    android:textSize="15sp"
+                    android:textColor="#000000"/>
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="500米"
+                    android:id="@+id/shop_message_distance"
+                    android:textSize="10sp"
+                    android:textColor="#999999"
+                    android:layout_weight="1"/>
+                <Button 
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:background="@drawable/login_submit_bg"
+                    android:text="选我"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                	android:text="高新区  xx街xx楼xx号xx层"
+                	android:textSize="10sp"
+                	android:textColor="#999999"/>
+        </LinearLayout>
+        
+    	<LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="#dedede"></LinearLayout>
+    	
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                	android:textSize="10sp"
+                	android:text="高新区  xx街xx楼xx号xx层
+                	高新区  xx街xx楼xx号xx层"
+                	android:textColor="#999999"/>
+            
+        </LinearLayout>
+        
+    	<LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="#dedede"></LinearLayout>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="显示全部"
+                android:textColor="#000000"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:background="#dedede"></LinearLayout>
+
+</LinearLayout>

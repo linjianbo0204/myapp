@@ -39,8 +39,13 @@ public class NavigationButton extends LinearLayout{
 		tv.setTextSize(12);
 		if(imagePosition != NAVIGATIONIMAGENONE){
 			ImageView iv = new ImageView(mContext);
-			iv.setBackgroundResource(imageSourceID);
-			iv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+			iv.setImageResource(imageSourceID);
+			LayoutParams imageLP = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			imageLP.gravity = Gravity.CENTER_VERTICAL;
+			imageLP.topMargin = 3;
+			imageLP.leftMargin = 3;
+			iv.setLayoutParams(imageLP);
+			
 			if(imagePosition == NAVIGATIONIMAGELEFT){
 				this.addView(iv);
 				this.addView(tv);
