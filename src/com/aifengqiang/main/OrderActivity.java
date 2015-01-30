@@ -4,10 +4,16 @@ import com.aifengqiang.ui.NavigationButton;
 import com.aifengqiang.ui.NavigationView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 
-public class OrderActivity extends Activity{
+public class OrderActivity extends Activity implements OnClickListener{
+	private Button orderButton;
 
 	protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,5 +38,23 @@ public class OrderActivity extends Activity{
 			}
 		};
 		nv.setNavigationViewListener(nvl);
+		
+		orderButton = (Button)findViewById(R.id.order_submit);
+		orderButton.setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v == orderButton){
+			Intent it = new Intent(this, WaitingActivity.class);
+			startActivity(it);
+			int version = Integer.valueOf(android.os.Build.VERSION.SDK);
+			if(version >= 5) {
+				overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+				//overridePendingTransition(android.R.anim.decelerate_interpolator,android.R.anim.decelerate_interpolator);    
+				//overridePendingTransition(android.R.anim.overshoot_interpolator,android.R.anim.linear_interpolator);  
+			}
+		}
 	}
 }

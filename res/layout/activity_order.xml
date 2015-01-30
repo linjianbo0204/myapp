@@ -40,11 +40,12 @@
         		    android:layout_height="40dp"
         		    android:orientation="horizontal"
         		    android:gravity="center_vertical"
-        		    android:layout_marginLeft="10dp"
-        		    android:layout_marginRight="10dp"
+        		    android:background="@drawable/background_color"
+        		    android:clickable="true"
         		    android:layout_weight="1">
         		    <TextView
         		        android:id="@+id/order_date"
+        		    	android:layout_marginLeft="10dp"
         		        android:layout_width="0dp"
         		        android:layout_height="wrap_content"
         		        android:layout_weight="1"
@@ -66,6 +67,7 @@
         		        android:layout_width="0dp"
         		        android:layout_height="wrap_content"
         		        android:layout_weight="1"
+        		    	android:layout_marginRight="10dp"
         		        android:gravity="right"
         		        android:textSize="15sp"
         		        android:textColor="#666666"
@@ -81,16 +83,17 @@
         		<LinearLayout 
         		    android:layout_width="match_parent"
         		    android:layout_height="40dp"
-        		    android:layout_marginLeft="10dp"
-        		    android:layout_marginRight="10dp"
         		    android:orientation="horizontal"
         		    android:gravity="center_vertical"
+        		    android:background="@drawable/background_color"
+        		    android:clickable="true"
         		    android:layout_weight="1">
         		    <TextView
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
         		        android:textSize="15sp"
+        		    	android:layout_marginLeft="10dp"
         		        android:text="距离"></TextView>
         		    <TextView 
         		        android:id="@+id/order_zone"
@@ -105,6 +108,7 @@
         		        android:id="@+id/order_distance"
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
+        		    	android:layout_marginRight="10dp"
         		        android:textColor="#f88727"
         		        android:textSize="15sp"
         		        android:gravity="right"
@@ -120,16 +124,17 @@
         		<LinearLayout 
         		    android:layout_width="match_parent"
         		    android:layout_height="40dp"
-        		    android:layout_marginLeft="10dp"
-        		    android:layout_marginRight="10dp"
         		    android:orientation="horizontal"
         		    android:gravity="center_vertical"
+        		    android:background="@drawable/background_color"
+        		    android:clickable="true"
         		    android:layout_weight="1">
         		    <TextView
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
         		        android:textSize="15sp"
+        		    	android:layout_marginLeft="10dp"
         		        android:text="口味"></TextView>
         		    <TextView
         		        android:layout_width="wrap_content"
@@ -138,6 +143,7 @@
         		        android:textSize="15sp"
         		        android:gravity="right"
         		        android:text="本帮江浙菜"
+        		    	android:layout_marginRight="10dp"
         		        android:layout_weight="1"/>
         		</LinearLayout>
         		
@@ -151,8 +157,6 @@
         		<LinearLayout 
         		    android:layout_width="match_parent"
         		    android:layout_height="40dp"
-        		    android:layout_marginLeft="10dp"
-        		    android:layout_marginRight="10dp"
         		    android:orientation="horizontal"
         		    android:gravity="center_vertical"
         		    android:layout_weight="1">
@@ -161,6 +165,7 @@
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
         		        android:textSize="15sp"
+        		    	android:layout_marginLeft="10dp"
         		        android:text="称呼"></TextView>
         		    <EditText
         		        android:id="@+id/order_firstname"
@@ -169,7 +174,8 @@
         		        android:textColor="#f88727"
         		        android:textSize="15sp"
         		        android:gravity="right"
-        		        android:text="李"
+        		        android:hint="请输入您的姓氏"
+        		        android:textColorHint="#cccccc"
         		        android:background="#ffffffff"
         		        android:layout_weight="1"/>
         		    <ImageView
@@ -196,6 +202,7 @@
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
         		        android:textSize="15sp"
+        		    	android:layout_marginRight="10dp"
         		        android:text="女士"></TextView>
         		</LinearLayout>
         		
@@ -225,10 +232,10 @@
         		<LinearLayout 
         		    android:layout_width="match_parent"
         		    android:layout_height="40dp"
-        		    android:layout_marginLeft="10dp"
-        		    android:layout_marginRight="10dp"
         		    android:orientation="horizontal"
         		    android:gravity="center_vertical"
+        		    android:background="@drawable/background_color"
+        		    android:clickable="true"
         		    android:layout_weight="1">
         		    <TextView
         		        android:layout_width="wrap_content"
@@ -236,6 +243,7 @@
         		        android:textColor="#666666"
         		        android:textSize="15sp"
         		        android:text="预计消费金额"
+        		    	android:layout_marginLeft="10dp"
         		        android:layout_weight="1"></TextView>
         		    <TextView
         		        android:id="@+id/order_cost"
@@ -244,6 +252,7 @@
         		        android:textColor="#f88727"
         		        android:textSize="15sp"
         		        android:gravity="right"
+        		    	android:layout_marginRight="10dp"
         		        android:text="6000元"/>
         		</LinearLayout>
         		<LinearLayout 
@@ -274,8 +283,6 @@
         		    android:layout_width="match_parent"
         		    android:layout_height="40dp"
         		    android:orientation="horizontal"
-        		    android:layout_marginLeft="10dp"
-        		    android:layout_marginRight="10dp"
         		    android:gravity="center_vertical"
         		    android:layout_weight="1">
         		    <TextView
@@ -284,11 +291,13 @@
         		        android:textColor="#666666"
         		        android:textSize="15sp"
         		        android:text="我要订包房"
+        		    	android:layout_marginLeft="10dp"
         		        android:layout_weight="1"></TextView>
         		    <Button
         		        android:id="@+id/order_box"
         		        android:layout_width="55dp"
         		        android:layout_height="30dp"
+        		    	android:layout_marginRight="10dp"
         		        android:background="@drawable/btn_close">
         		    </Button>
         		</LinearLayout>
@@ -385,6 +394,7 @@
             android:background="#fcfcfc"
         	android:layout_weight="1">
             <Button 
+                android:id="@+id/order_submit"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"

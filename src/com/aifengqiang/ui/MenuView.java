@@ -78,9 +78,9 @@ public class MenuView extends LinearLayout implements OnClickListener{
 			llp.gravity = Gravity.BOTTOM;
 			innerView.setLayoutParams(llp);
 			
-			itemView.setTag(title);
-			itemView.setClickable(true);
-			itemView.setOnClickListener(this);
+			innerView.setTag(title);
+			innerView.setClickable(true);
+			innerView.setOnClickListener(this);
 			
 			ImageView item = new ImageView(mContext);
 			item.setImageResource(bgId);

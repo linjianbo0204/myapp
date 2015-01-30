@@ -7,10 +7,14 @@ import com.aifengqiang.ui.NavigationView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 
-public class UserCenterActivity extends Activity{
+public class UserCenterActivity extends Activity implements OnClickListener{
 	private UserCenterActivity point = this;
+	private Button loginButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -50,5 +54,23 @@ public class UserCenterActivity extends Activity{
 			}
 		};
 		mv.setMenuViewListener(mnl);
+		
+		loginButton = (Button)findViewById(R.id.user_login);
+		loginButton.setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v == loginButton){
+			Intent it = new Intent(point, LoginActivity.class);
+			startActivity(it);
+			int version = Integer.valueOf(android.os.Build.VERSION.SDK);
+			if(version >= 5) {
+				overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+				//overridePendingTransition(android.R.anim.decelerate_interpolator,android.R.anim.decelerate_interpolator);    
+				//overridePendingTransition(android.R.anim.overshoot_interpolator,android.R.anim.linear_interpolator);  
+			}
+		}
 	}
 }

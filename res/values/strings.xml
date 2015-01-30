@@ -12,4 +12,5 @@
     <string name="submit">确认</string>
     <string name="orderbutton">抢我吧</string>
     <string name="reset">重置</string>
+    <string name="food_style">口味</string>
 </resources>

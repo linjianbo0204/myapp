@@ -85,6 +85,17 @@ public class MainActivity extends Activity {
 						//overridePendingTransition(android.R.anim.overshoot_interpolator,android.R.anim.linear_interpolator);  
 					}
 				}
+
+				if(id==4){
+					Intent it = new Intent(point, FoodStyleListChooseActivity.class);
+					startActivity(it);
+					int version = Integer.valueOf(android.os.Build.VERSION.SDK);
+					if(version >= 5) {
+						overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+						//overridePendingTransition(android.R.anim.decelerate_interpolator,android.R.anim.decelerate_interpolator);    
+						//overridePendingTransition(android.R.anim.overshoot_interpolator,android.R.anim.linear_interpolator);  
+					}
+				}
 			}
 		};
 		mv.setMenuViewListener(mnl);
