@@ -121,7 +121,8 @@
         		    android:layout_marginRight="5dp"
         		    android:background="#dedede">
         		</LinearLayout>
-        		<LinearLayout 
+        		<LinearLayout
+        		    android:id="@+id/order_style_linear" 
         		    android:layout_width="match_parent"
         		    android:layout_height="40dp"
         		    android:orientation="horizontal"
@@ -137,6 +138,7 @@
         		    	android:layout_marginLeft="10dp"
         		        android:text="口味"></TextView>
         		    <TextView
+        		        android:id="@+id/order_style_text"
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#f88727"
@@ -178,11 +180,17 @@
         		        android:textColorHint="#cccccc"
         		        android:background="#ffffffff"
         		        android:layout_weight="1"/>
-        		    <ImageView
+        		    <RadioGroup
+        		        android:layout_width="wrap_content"
+        		        android:layout_height="wrap_content"
+        		        android:orientation="horizontal">
+        		    <RadioButton
         		        android:id="@+id/order_man_button"
         		        android:layout_width="25dp"
         		        android:layout_height="25dp"
-        		        android:background="@drawable/select_pre"></ImageView>
+        		        android:checked="true"
+        		        android:background="@drawable/radio_button_choose_bg"
+        		        android:button="@null"></RadioButton>
         		    <TextView 
         		        android:id="@+id/order_man_text"
         		        android:layout_width="wrap_content"
@@ -190,12 +198,12 @@
         		        android:textColor="#f88727"
         		        android:textSize="15sp"
         		        android:text="先生"></TextView>
-        		    <ImageView
-        		        android:layout_marginLeft="10dp"
+        		    <RadioButton
         		        android:id="@+id/order_woman_button"
         		        android:layout_width="25dp"
         		        android:layout_height="25dp"
-        		        android:background="@drawable/select_nor"></ImageView>
+        		        android:background="@drawable/radio_button_choose_bg"
+        		        android:button="@null"></RadioButton>
         		    <TextView 
         		        android:id="@+id/order_woman_text"
         		        android:layout_width="wrap_content"
@@ -204,6 +212,7 @@
         		        android:textSize="15sp"
         		    	android:layout_marginRight="10dp"
         		        android:text="女士"></TextView>
+        		    </RadioGroup>
         		</LinearLayout>
         		
         		<LinearLayout 
@@ -230,6 +239,7 @@
         	    	android:background="#dedede"
         		    android:layout_weight="1"></LinearLayout>
         		<LinearLayout 
+        		    android:id="@+id/order_cost_linear"
         		    android:layout_width="match_parent"
         		    android:layout_height="40dp"
         		    android:orientation="horizontal"
@@ -293,20 +303,21 @@
         		        android:text="我要订包房"
         		    	android:layout_marginLeft="10dp"
         		        android:layout_weight="1"></TextView>
-        		    <Button
+        		    <RadioButton
         		        android:id="@+id/order_box"
         		        android:layout_width="55dp"
         		        android:layout_height="30dp"
         		    	android:layout_marginRight="10dp"
-        		        android:background="@drawable/btn_close">
-        		    </Button>
+        		        android:background="@drawable/radio_button_slide_bg"
+        		        android:button="@null">
+        		    </RadioButton>
         		</LinearLayout>
         		<LinearLayout 
         		        android:id="@+id/order_box_agree"
         		        android:layout_width="match_parent"
         		        android:layout_height="wrap_content"
         		        android:orientation="vertical"
-        		        android:visibility="visible">
+        		        android:visibility="gone">
         		        
         				<LinearLayout 
         	   	 			android:layout_width="match_parent"
@@ -320,12 +331,14 @@
         	    			android:layout_height="40dp"
         	    			android:gravity="center_vertical"
         		    		android:layout_weight="1">
-        					<ImageView
+        					<RadioButton
         		        		android:layout_marginLeft="10dp"
         		        		android:id="@+id/order_box_button"
         		        		android:layout_width="25dp"
         		        		android:layout_height="25dp"
-        		        		android:background="@drawable/select_nor"></ImageView>
+        		        		android:gravity="center"
+        		        		android:background="@drawable/radio_button_choose_bg"
+        		        		android:button="@null"/>
         		    		<TextView 
         		       			android:id="@+id/order_box_text"
         		        		android:layout_width="wrap_content"

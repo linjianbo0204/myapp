@@ -14,12 +14,16 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.view.View.OnLayoutChangeListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Gallery;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 public class MainActivity extends Activity {
@@ -27,6 +31,8 @@ public class MainActivity extends Activity {
 	public int navViewHeight;
 	public int menuViewHeight;
 	MainActivity point = this;
+	private LinearLayout galleryIcon;
+	private int count;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +93,7 @@ public class MainActivity extends Activity {
 				}
 
 				if(id==4){
-					Intent it = new Intent(point, FoodStyleListChooseActivity.class);
+					Intent it = new Intent(point, ShopDetailActivity.class);
 					startActivity(it);
 					int version = Integer.valueOf(android.os.Build.VERSION.SDK);
 					if(version >= 5) {
@@ -112,6 +118,37 @@ public class MainActivity extends Activity {
 			}
 			
 		});
+		count = gallery.getCount();
+		galleryIcon = (LinearLayout)findViewById(R.id.main_gallery_radio);
+		for(int i = 0; i<count;i++){
+			ImageView icon= new ImageView(this);
+			LinearLayout.LayoutParams iconLayout = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			iconLayout.rightMargin = 10;
+			icon.setLayoutParams(iconLayout);
+			icon.setTag(i);
+			icon.setBackgroundResource(R.drawable.dot_nor);
+			galleryIcon.addView(icon);
+		}
+		gallery.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				for(int i = 0;i<count;i++){
+					galleryIcon.getChildAt(i).setBackgroundResource(R.drawable.dot_nor);
+				}
+				galleryIcon.getChildAt(position).setBackgroundResource(R.drawable.dot_pre);
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		
 		
 		
 		FoodKindListView fklv = (FoodKindListView)findViewById(R.id.main_list_view);

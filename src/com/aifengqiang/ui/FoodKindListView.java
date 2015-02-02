@@ -7,15 +7,19 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.LinearLayout.LayoutParams;
 
 public class FoodKindListView extends LinearLayout{
 	
 	private Context mContext;
 	private int count=0;
+	private LinearLayout list;
 
 	public FoodKindListView(Context context) {
 		super(context);
@@ -30,16 +34,43 @@ public class FoodKindListView extends LinearLayout{
 	}
 	
 	public void init(Context context){
-		this.mContext = context;
-		this.setPadding(5, 5, 5, 5);
+		mContext = context;
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		this.setOrientation(VERTICAL);
+		lp.gravity = Gravity.CENTER_VERTICAL;
+		lp.setMargins(0, 20, 0, 20);
+		this.setBackgroundColor(0xffffffff);
 		this.setLayoutParams(lp);
+		this.setOrientation(VERTICAL);
+		
+		View lineTop = new View(mContext);
+		lineTop.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 1));
+		lineTop.setBackgroundColor(0xffdedede);
+		this.addView(lineTop);
+		
+		list = new LinearLayout(mContext);
+		LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		llp.gravity = Gravity.CENTER_VERTICAL;
+		list.setOrientation(VERTICAL);
+		list.setLayoutParams(llp);
+		this.addView(list);
+		
+		View lineBottom = new View(mContext);
+		lineBottom.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 1));
+		lineBottom.setBackgroundColor(0xffdedede);
+		this.addView(lineBottom);
 	}
 	
 	public void addItem(String pictureUrl, String title, String detail){
+		if(count!=0){
+			View line = new View(mContext);
+			LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, 1);
+			lp.leftMargin = 10;
+			lp.rightMargin = 10;
+			line.setLayoutParams(lp);
+			line.setBackgroundColor(0xffdedede);
+			list.addView(line);
+		}
 		LinearLayout item = new LinearLayout(mContext);
-		item.setPadding(2, 2, 2, 2);
 		item.setTag(count);
 		count++;
 		//Log.e("Aifengqiang","count: "+count);
@@ -55,7 +86,8 @@ public class FoodKindListView extends LinearLayout{
 		TextView detailText = (TextView) item.findViewById(R.id.food_list_detail);
 		detailText.setText(detail);
 		
-		this.addView(item);
+		list.addView(item);
+		
 	}
 	
 }

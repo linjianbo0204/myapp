@@ -62,6 +62,14 @@
             <intent-filter>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ShopDetailActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
