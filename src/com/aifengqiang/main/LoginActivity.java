@@ -1,11 +1,17 @@
 package com.aifengqiang.main;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.aifengqiang.network.ConnectionClient;
 import com.aifengqiang.ui.NavigationButton;
 import com.aifengqiang.ui.NavigationView;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,6 +29,7 @@ public class LoginActivity extends Activity{
 	private EditText checkNumber;
 	private Button submit;
 	private Button checkNumberBtn;
+	private Handler handler;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -121,6 +128,35 @@ public class LoginActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				Thread th = new Thread(){
+					int min = 0;
+					@Override
+					public void run(){
+						String mobileNumber = phoneNumber.getText().toString();
+						JSONObject json = new JSONObject();
+						try {
+							json.put("mobile", mobileNumber);
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						ConnectionClient.connServerForResultPost("customer/verify", json);
+						while(min<60){
+							min++;
+							try{
+								Message m = new Message();
+								m.what = 0;
+								m.arg1 = min;
+								handler.sendMessage(m);
+								sleep(1000);
+							}
+							catch(Exception ex){
+								ex.printStackTrace();
+							}
+						}
+					}
+				};
+				th.start();
 				
 			}
 			
@@ -137,6 +173,27 @@ public class LoginActivity extends Activity{
 			}
 			
 		});
+		
+		handler = new Handler(){
+			@Override
+			public void handleMessage(Message msg) {
+				switch(msg.what){
+				case 0:
+					if(msg.arg1!=60){
+						checkNumberBtn.setClickable(false);
+						checkNumberBtn.setText("("+msg.arg1+")秒后重新获取");
+					}
+					else
+					{
+						checkNumberBtn.setClickable(true);
+						checkNumberBtn.setText("获取验证码");
+					}
+					break;
+				default:
+					break;
+				}
+			}
+		};
 	}
 
 }
