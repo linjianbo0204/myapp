@@ -1,6 +1,7 @@
 package com.aifengqiang.network;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -11,12 +12,14 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 
 public class ConnectionClient {
 	public String connectionString;
@@ -56,10 +59,14 @@ public class ConnectionClient {
         try { 
             // HttpClient对象 
             HttpClient httpClient = new DefaultHttpClient();
-            StringEntity se = new StringEntity(param.toString());
+            httpRequest.setHeader(HTTP.CONTENT_TYPE, "application/json");
+            String encoderJson = param.toString();
+            StringEntity se = new StringEntity(encoderJson);
+            Log.e("HttpRequest",""+encoderJson);
             httpRequest.setEntity(se);
             // 获得HttpResponse对象 
-            HttpResponse httpResponse = httpClient.execute(httpRequest); 
+            HttpResponse httpResponse = httpClient.execute(httpRequest);
+            Log.e("HttpConnect",httpResponse.getStatusLine().getStatusCode()+"");
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) { 
                 // 取得返回的数据 
             	strResult = EntityUtils.toString(httpResponse.getEntity());

@@ -2,6 +2,7 @@ package com.aifengqiang.main;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import com.aifengqiang.network.ConnectionClient;
 import com.aifengqiang.ui.NavigationButton;
@@ -12,6 +13,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -30,6 +32,8 @@ public class LoginActivity extends Activity{
 	private Button submit;
 	private Button checkNumberBtn;
 	private Handler handler;
+	private LoginActivity loginContext = this;
+	private String verifyCode;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -140,8 +144,19 @@ public class LoginActivity extends Activity{
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						ConnectionClient.connServerForResultPost("customer/verify", json);
-						while(min<60){
+						String result = ConnectionClient.connServerForResultPost("customer/verify", json);
+						JSONTokener token = new JSONTokener(result);
+						JSONObject object;
+						try {
+							object = (JSONObject)token.nextValue();
+							verifyCode = object.getString("verifyCode");
+							Log.e("VerfyCode",""+verifyCode);
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						Log.e("Connect","Result"+result);
+						while(min<30){
 							min++;
 							try{
 								Message m = new Message();
@@ -169,7 +184,18 @@ public class LoginActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+				Thread th = new Thread(){
+					@Override
+					public void run(){
+						String inputVerifyCode = checkNumber.getText().toString();
+						if(inputVerifyCode.equals(verifyCode)){
+							Message m = new Message();
+							m.what = 1;
+							handler.sendMessage(m);
+						}
+					}
+				};
+				th.start();
 			}
 			
 		});
@@ -179,7 +205,7 @@ public class LoginActivity extends Activity{
 			public void handleMessage(Message msg) {
 				switch(msg.what){
 				case 0:
-					if(msg.arg1!=60){
+					if(msg.arg1!=30){
 						checkNumberBtn.setClickable(false);
 						checkNumberBtn.setText("("+msg.arg1+")秒后重新获取");
 					}
@@ -188,6 +214,9 @@ public class LoginActivity extends Activity{
 						checkNumberBtn.setClickable(true);
 						checkNumberBtn.setText("获取验证码");
 					}
+					break;
+				case 1:
+					loginContext.finish();
 					break;
 				default:
 					break;
