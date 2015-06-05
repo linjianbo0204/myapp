@@ -21,6 +21,7 @@
            		android:layout_width="match_parent"
             	android:layout_height="wrap_content"
            		android:text="设置条件，帮你找优惠餐厅"
+           		android:textSize="15sp"
             	android:textColor="#666666"
             	android:layout_marginTop="10dp"
             	android:layout_marginLeft="5dp"/>
@@ -42,6 +43,7 @@
         		    android:gravity="center_vertical"
         		    android:background="@drawable/background_color"
         		    android:clickable="true"
+        		    android:id="@+id/order_dtp_linear"
         		    android:layout_weight="1">
         		    <TextView
         		        android:id="@+id/order_date"
@@ -50,7 +52,7 @@
         		        android:layout_height="wrap_content"
         		        android:layout_weight="1"
         		        android:gravity="left"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		        android:textColor="#666666"
         		        android:text="1-20 周二"/>
         		    <TextView
@@ -59,7 +61,7 @@
         		        android:layout_height="wrap_content"
         		        android:layout_weight="1"
         		        android:gravity="center"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		        android:textColor="#666666"
         		        android:text="11:30"/>
         		    <TextView
@@ -69,7 +71,7 @@
         		        android:layout_weight="1"
         		    	android:layout_marginRight="10dp"
         		        android:gravity="right"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		        android:textColor="#666666"
         		        android:text="10人"/>
         		</LinearLayout>
@@ -86,32 +88,42 @@
         		    android:orientation="horizontal"
         		    android:gravity="center_vertical"
         		    android:background="@drawable/background_color"
+        		    android:id="@+id/order_distance_linear"
         		    android:clickable="true"
         		    android:layout_weight="1">
         		    <TextView
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
+        		        android:id="@+id/order_distance_text"
         		    	android:layout_marginLeft="10dp"
         		        android:text="距离"></TextView>
+        		    <ImageView
+        		        android:layout_width="12dp"
+        		        android:layout_height="12dp"
+        		        android:layout_gravity="center"
+        		        android:background="@drawable/icon_switch"></ImageView>
         		    <TextView 
         		        android:id="@+id/order_zone"
         		        android:layout_marginLeft="3dp"
         		        android:layout_width="wrap_content"
-        		        android:layout_height="wrap_content"
+        		        android:layout_height="match_parent"
+        		        android:paddingRight="20dp"
         		        android:textColor="#f88727"
-        		        android:textSize="12sp"
+        		        android:textSize="13sp"
+        		        android:gravity="center_vertical"
         		        android:text="[商圈]"
-        		        android:layout_weight="1"/>
+        		        android:clickable="true"/>
         		    <TextView
         		        android:id="@+id/order_distance"
         		        android:layout_width="wrap_content"
-        		        android:layout_height="wrap_content"
+        		        android:layout_height="match_parent"
+        		        android:gravity="center|right"
         		    	android:layout_marginRight="10dp"
+        		        android:layout_weight="1"
         		        android:textColor="#f88727"
-        		        android:textSize="15sp"
-        		        android:gravity="right"
+        		        android:textSize="16sp"
         		        android:text="2000米"/>
         		</LinearLayout>
         		<LinearLayout
@@ -134,16 +146,16 @@
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		    	android:layout_marginLeft="10dp"
         		        android:text="口味"></TextView>
         		    <TextView
         		        android:id="@+id/order_style_text"
         		        android:layout_width="wrap_content"
-        		        android:layout_height="wrap_content"
+        		        android:layout_height="match_parent"
+        		        android:gravity="center|right"
         		        android:textColor="#f88727"
-        		        android:textSize="15sp"
-        		        android:gravity="right"
+        		        android:textSize="16sp"
         		        android:text="本帮江浙菜"
         		    	android:layout_marginRight="10dp"
         		        android:layout_weight="1"/>
@@ -166,16 +178,18 @@
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		    	android:layout_marginLeft="10dp"
         		        android:text="称呼"></TextView>
         		    <EditText
         		        android:id="@+id/order_firstname"
         		        android:layout_width="wrap_content"
-        		        android:layout_height="wrap_content"
+        		        android:layout_height="match_parent"
+        		        android:gravity="center|right"
+        		        android:layout_marginRight="10dp"
         		        android:textColor="#f88727"
-        		        android:textSize="15sp"
-        		        android:gravity="right"
+        		        android:textSize="16sp"
+        		        android:singleLine="true"
         		        android:hint="请输入您的姓氏"
         		        android:textColorHint="#cccccc"
         		        android:background="#ffffffff"
@@ -196,7 +210,7 @@
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#f88727"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		        android:text="先生"></TextView>
         		    <RadioButton
         		        android:id="@+id/order_woman_button"
@@ -209,7 +223,7 @@
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		    	android:layout_marginRight="10dp"
         		        android:text="女士"></TextView>
         		    </RadioGroup>
@@ -251,17 +265,17 @@
         		        android:layout_width="wrap_content"
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		        android:text="预计消费金额"
         		    	android:layout_marginLeft="10dp"
         		        android:layout_weight="1"></TextView>
         		    <TextView
         		        android:id="@+id/order_cost"
         		        android:layout_width="wrap_content"
-        		        android:layout_height="wrap_content"
+        		        android:layout_height="match_parent"
+        		        android:gravity="center|right"
         		        android:textColor="#f88727"
-        		        android:textSize="15sp"
-        		        android:gravity="right"
+        		        android:textSize="16sp"
         		    	android:layout_marginRight="10dp"
         		        android:text="6000元"/>
         		</LinearLayout>
@@ -299,7 +313,7 @@
         		        android:layout_width="0dp"
         		        android:layout_height="wrap_content"
         		        android:textColor="#666666"
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		        android:text="我要订包房"
         		    	android:layout_marginLeft="10dp"
         		        android:layout_weight="1"></TextView>
@@ -344,7 +358,7 @@
         		        		android:layout_width="wrap_content"
         		        		android:layout_height="wrap_content"
         		        		android:textColor="#666666"
-        		        		android:textSize="15sp"
+        		        		android:textSize="16sp"
         		        		android:text="如没有包房可接受大厅"></TextView>
         		    	</LinearLayout>
         		   	</LinearLayout>
@@ -375,8 +389,9 @@
         		        android:layout_width="match_parent"
         		        android:layout_height="40dp"
         		        android:background="#ffffffff"
+        		        android:id="@+id/order_remark"
         		        android:hint="您有任何需要可以告诉我们..."
-        		        android:textSize="15sp"
+        		        android:textSize="16sp"
         		        android:textColor="#333333"
         		        android:textColorHint="#cccccc"/>
         		</LinearLayout>

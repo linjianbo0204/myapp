@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="190dp"
+    android:orientation="vertical"
+    android:background="#ffffff">
+    
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+    	<com.aifengqiang.wheel.WheelView
+       	 	android:id="@+id/dialog_district_wheel"
+        	android:layout_width="120dp"
+        	android:layout_height="150dp"
+        	android:layout_marginLeft="20dp"
+        	android:layout_marginRight="20dp"
+        	></com.aifengqiang.wheel.WheelView>
+    	<com.aifengqiang.wheel.WheelView
+       		android:id="@+id/dialog_zone_wheel"
+        	android:layout_width="120dp"
+        	android:layout_height="150dp"
+        	android:layout_marginLeft="20dp"
+        	android:layout_marginRight="20dp"
+        	></com.aifengqiang.wheel.WheelView>
+    </LinearLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dedede"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <Button 
+            android:id="@+id/dialog_circle_confirm"
+            android:background="@drawable/background_color"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:text="确定"/>
+        <View 
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dedede"/>
+        <Button 
+            android:id="@+id/dialog_circle_back"
+            android:background="@drawable/background_color"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:text="取消"/>
+    </LinearLayout>
+
+</LinearLayout>

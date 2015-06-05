@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">AiFengQiang</string>
-    <string name="app_title">爱疯抢</string>
+    <string name="app_name">饭点儿</string>
+    <string name="app_title">饭点儿</string>
     <string name="location">定位</string>
     <string name="show">展示</string>
     <string name="hello_world">Hello world!</string>
@@ -14,4 +14,22 @@
     <string name="reset">重置</string>
     <string name="food_style">口味</string>
     <string name="choose">确定</string>
+    <string name="networkstatus_3">网络重定向</string>
+    <string name="networkstatus_4">网络请求错误</string>
+    <string name="networkstatus_5">网络服务器错误</string>
+	<string name="pull_to_refresh">下拉可以刷新</string>
+	<string name="release_to_refresh">释放立即刷新</string>
+	<string name="refreshing">正在刷新…</string>
+	<string name="not_updated_yet">暂未更新过</string>
+	<string name="updated_at">上次更新于%1$s前</string>
+	<string name="updated_just_now">刚刚更新</string>
+	<string name="time_error">时间有问题</string>
+	<string name="pic">有图</string>
+	<string name="nopic">无图</string>
+	<string name="comment">写点评</string>
+	<string name="version">版本 V1.0.0</string>
+	<string name="send">发表</string>
+	<string name="navigation">导航</string>
+	<string name="version_detail">版本说明说明.版本说明说明.版本说明说明.版本说明说明.版本说明说明.版本说明说明.</string>
+	<string name="app_detail"><p>饭点版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明版本说明说明</p></string>
 </resources>

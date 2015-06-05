@@ -34,9 +34,9 @@ public class NavigationButton extends LinearLayout{
 	public void addButton(String title, int imagePosition, int imageSourceID){
 		TextView tv = new TextView(mContext);
 		tv.setText(title);
+		tv.setTextSize(15);
 		tv.setTextColor(Color.WHITE);
 		tv.setBackgroundColor(Color.TRANSPARENT);
-		tv.setTextSize(12);
 		if(imagePosition != NAVIGATIONIMAGENONE){
 			ImageView iv = new ImageView(mContext);
 			iv.setImageResource(imageSourceID);

@@ -10,46 +10,11 @@
         android:layout_width="fill_parent"
         android:layout_height = "wrap_content"
     />
-    <ScrollView
-        android:id="@+id/main_scroll_view"
-        android:layout_width="fill_parent"
+    <FrameLayout
+        android:id="@+id/main_fragment"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#ffffff"
-        android:scrollbars="none"
-        >
-    	<LinearLayout
-        	android:id="@+id/main_content"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="vertical"
-        	android:background="#ededed"
-        	>
-        	<FrameLayout 
-        	    android:layout_width="match_parent"
-        	    android:layout_height="wrap_content">
-        		<Gallery
-	        	    android:id="@+id/main_gallery_view"
-	        		android:layout_width="fill_parent"
-        			android:layout_height="200dp"
-        			android:background="#666666"/>
-        		<LinearLayout 
-        		    android:id="@+id/main_gallery_radio"
-        		    android:layout_width="fill_parent"
-        		    android:layout_height="match_parent"
-        		    android:orientation="horizontal"
-        		    android:gravity="bottom|end"
-        	    	android:layout_marginBottom="5dp"></LinearLayout>
-        	</FrameLayout>
-        	<com.aifengqiang.ui.FoodKindListView
-        	    android:id="@+id/main_list_view"
-        	    android:layout_width="fill_parent"
-        	    android:layout_height="wrap_content"
-        	    android:layout_marginTop="20dp"
-        	    android:layout_marginBottom="20dp">
-        	</com.aifengqiang.ui.FoodKindListView >
-    	</LinearLayout>
-    </ScrollView>
+        android:layout_weight="1"/>
     
     <com.aifengqiang.ui.MenuView 
         android:id="@+id/main_menu_view"

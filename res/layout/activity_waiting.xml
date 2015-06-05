@@ -8,15 +8,11 @@
         android:layout_width="fill_parent"
         android:layout_height = "wrap_content"
     />
-    <ScrollView 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="#ededed">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="#ededed">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +33,7 @@
             <ImageView 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_time"
+                android:src="@drawable/icon_time1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"/>
             <TextView 
@@ -46,12 +42,13 @@
                 android:layout_weight="1"
                 android:text="剩余时间："
                 android:textColor="#333333"
-                android:textSize="15sp"/>
+                android:textSize="18sp"/>
             <TextView 
-                android:layout_width="20dp"
+                android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:background="@drawable/time_bg"
                 android:gravity="center"
+                android:textSize="19sp"
                 android:text="00"
                 android:id="@+id/waiting_munites"
                 android:textColor="#f88727"/>
@@ -59,13 +56,15 @@
                 android:layout_width="20dp"
                 android:layout_height="28dp"
                 android:gravity="center"
+                android:textSize="18sp"
                 android:text="分"
                 android:textColor="#666666"/>
             <TextView 
-                android:layout_width="20dp"
+                android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:background="@drawable/time_bg"
                 android:gravity="center"
+                android:textSize="19sp"
                 android:id="@+id/waiting_seconds"
                 android:text="00"
                 android:textColor="#f88727"/>
@@ -73,6 +72,7 @@
                 android:layout_width="20dp"
                 android:layout_height="28dp"
                 android:gravity="center"
+                android:textSize="18sp"
                 android:text="秒"
                 android:textColor="#666666"/>
         </LinearLayout>
@@ -83,11 +83,19 @@
             android:background="#dedede"></LinearLayout>
         
     </LinearLayout>
+
     <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            
+        android:id="@+id/waiting_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+            <ListView
+                android:id="@+id/waiting_shop_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical" >
+                
+			</ListView>
        		<TextView 
        		    android:id="@+id/waiting_shop_text"
             	android:layout_width="match_parent"
@@ -98,6 +106,5 @@
             	android:layout_marginRight="35dp"
             />
         </FrameLayout>
-        </LinearLayout>
-</ScrollView>
+   </LinearLayout>
 </LinearLayout>

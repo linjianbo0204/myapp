@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ededed">
+    <com.aifengqiang.ui.NavigationView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_suggestion_nav"></com.aifengqiang.ui.NavigationView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+   		<LinearLayout 
+   		    android:layout_width="match_parent"
+   		    android:layout_height="wrap_content"
+   		    android:orientation="vertical">
+   		    <EditText
+   		        android:id="@+id/activity_suggestion_text" 
+   		        android:layout_width="match_parent"
+   		        android:layout_height="300dp"
+   		        android:layout_margin="10dp"
+   		        android:background="@drawable/btn_white_bg"
+   		        android:hint="对饭点提意见"
+   		        android:padding="10dp"
+   		        android:textColor="#666666"
+   		        android:textSize="20sp"
+   		        android:textColorHint="#cccccc"
+   		        android:gravity="top|start"/>
+   		    <Button
+   		        android:id="@+id/activity_suggestion_btn"
+   		        android:layout_width="match_parent"
+   		        android:layout_height="40dp"
+   		        android:layout_margin="10dp"
+   		        android:background="@drawable/login_submit_bg"
+   		        android:text="发给饭点"
+   		        android:textColor="#ffffff"
+   		        android:textSize="20sp"/>
+   		</LinearLayout>     
+    </ScrollView>
+
+</LinearLayout>

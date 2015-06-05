@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="200dp"
-    android:layout_height="200dp"
+    android:layout_width="160dp"
+    android:layout_height="190dp"
     android:orientation="vertical"
     android:background="#ffffff">
     
     <com.aifengqiang.wheel.WheelView
         android:id="@+id/dialog_cost_wheel"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="150dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         ></com.aifengqiang.wheel.WheelView>
@@ -22,6 +22,7 @@
         android:orientation="horizontal"
         android:layout_weight="1">
         <Button 
+            android:id="@+id/dialog_cost_confirm"
             android:background="@drawable/background_color"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -32,6 +33,7 @@
             android:layout_height="match_parent"
             android:background="#dedede"/>
         <Button 
+            android:id="@+id/dialog_cost_back"
             android:background="@drawable/background_color"
             android:layout_width="0dp"
             android:layout_weight="1"

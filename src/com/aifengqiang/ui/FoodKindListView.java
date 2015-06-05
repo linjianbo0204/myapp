@@ -60,7 +60,7 @@ public class FoodKindListView extends LinearLayout{
 		this.addView(lineBottom);
 	}
 	
-	public void addItem(String pictureUrl, String title, String detail){
+	public void addItem(Bitmap sourceBmp, String title, String detail){
 		if(count!=0){
 			View line = new View(mContext);
 			LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, 1);
@@ -78,7 +78,8 @@ public class FoodKindListView extends LinearLayout{
 		inflater.inflate(R.layout.food_kind_show_list, item);
 		
 		ImageView image = (ImageView)item.findViewById(R.id.food_list_image);
-		image.setImageResource(R.drawable.ic_launcher);
+		if(sourceBmp!=null)
+			image.setImageBitmap(sourceBmp);
 		
 		TextView titleText = (TextView) item.findViewById(R.id.food_list_title);
 		titleText.setText(title);
@@ -88,6 +89,14 @@ public class FoodKindListView extends LinearLayout{
 		
 		list.addView(item);
 		
+	}
+	
+	public void refreshImage(Bitmap Image, int index){
+		LinearLayout item = (LinearLayout)this.findViewWithTag(index);
+
+		ImageView image = (ImageView)item.findViewById(R.id.food_list_image);
+		if(Image!=null)
+			image.setImageBitmap(Image);
 	}
 	
 }

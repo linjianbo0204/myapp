@@ -3,7 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="#ededed">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    	android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
     <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
@@ -16,6 +22,7 @@
         android:layout_marginRight="10dp"
         android:orientation="vertical">
         <LinearLayout 
+            android:id="@+id/shop_message_name_linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -27,34 +34,56 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_gravity="center_vertical">
-                <TextView 
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="好阳光海味世家"
-                    android:id="@+id/shop_message_name"
-                    android:textSize="15sp"
-                    android:textColor="#000000"/>
-                <TextView 
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+               		<TextView 
+                    	android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:text="好阳光海味世家"
+                    	android:id="@+id/shop_message_name"
+                    	android:textSize="18sp"
+                    	android:textColor="#000000"/>
+               		<LinearLayout 
+               		    android:layout_width="match_parent"
+               		    android:layout_height="wrap_content"
+               		    android:layout_marginTop="5dp"
+               		    android:orientation="horizontal">
+               		    <ImageView 
+               		        android:layout_width="15dp"
+               		        android:layout_height="15dp"
+               		        android:src="@drawable/locationarrow"/>
+                		<TextView
+                    		android:id="@+id/shop_message_address"
+                    		android:layout_width="wrap_content"
+                    		android:layout_height="wrap_content"
+                			android:textSize="12sp"
+                			android:textColor="#666666"/>
+               		    
+               		</LinearLayout>
+                    
+                </LinearLayout>
+                <LinearLayout 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="500米"
-                    android:id="@+id/shop_message_distance"
-                    android:textSize="10sp"
-                    android:textColor="#999999"
-                    android:layout_weight="1"/>
-                <Button 
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:background="@drawable/login_submit_bg"
-                    android:text="选我"
-                    android:textColor="#ffffff"/>
+                    android:orientation="vertical">
+                	<Button
+                    	android:id="@+id/shop_message_choose" 
+                    	android:layout_width="36dp"
+                    	android:layout_height="36dp"
+                    	android:background="@drawable/choose"
+                    	android:textColor="#ffffff"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                    	android:text="选我"
+                    	android:textColor="#f88727"
+                    	android:textSize="12sp"
+                    	android:layout_gravity="center"/>
+                </LinearLayout>
             </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                	android:text="高新区  xx街xx楼xx号xx层"
-                	android:textSize="10sp"
-                	android:textColor="#999999"/>
         </LinearLayout>
         
     	<LinearLayout 
@@ -71,12 +100,13 @@
             android:orientation="vertical"
             android:gravity="center_vertical">
                 <TextView 
+                    android:id="@+id/shop_message_discount_message"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                	android:textSize="10sp"
+                	android:textSize="12sp"
                 	android:text="高新区  xx街xx楼xx号xx层
                 	高新区  xx街xx楼xx号xx层"
-                	android:textColor="#999999"/>
+                	android:textColor="#666666"/>
             
         </LinearLayout>
         
@@ -86,15 +116,19 @@
             android:layout_weight="1"
             android:background="#dedede"></LinearLayout>
         <LinearLayout 
+            android:id="@+id/shop_message_all"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:orientation="vertical"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:clickable="true">
             <TextView 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                
+                android:id="@+id/shop_message_showall"
                 android:text="显示全部"
                 android:textColor="#000000"
                 android:gravity="center"/>
@@ -105,5 +139,5 @@
             android:layout_height="0.5dp"
             android:layout_weight="1"
             android:background="#dedede"></LinearLayout>
-
+</LinearLayout>
 </LinearLayout>

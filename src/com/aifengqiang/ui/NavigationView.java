@@ -1,6 +1,9 @@
 package com.aifengqiang.ui;
 
 
+import com.aifengqiang.data.GlobalData;
+
+import android.R.integer;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
@@ -49,6 +52,13 @@ public class NavigationView extends RelativeLayout implements OnClickListener{
 		setButton(title, NAVIGATION_BUTTON_RIGHT, imagePosition, imageSourceID);
 	}
 	
+	public void clearButton(int position){
+		NavigationButton oldButton = (NavigationButton) this.findViewWithTag(new Integer(position));
+		if(oldButton != null){
+			this.removeView(oldButton);
+		}
+	}
+	
 	private void setButton(String title, int buttonId, int imagePosition, int imageSourceID){
 		NavigationButton oldButton = (NavigationButton) this.findViewWithTag(new Integer(buttonId));
 		if(oldButton != null){
@@ -59,7 +69,7 @@ public class NavigationView extends RelativeLayout implements OnClickListener{
 		newButton.setTag(new Integer(buttonId));
 		newButton.setOnClickListener(this);
 		
-		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(-2, -2);
+		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(-2, (int)(50*GlobalData.getIntance().getScale()));
 		if(buttonId == NAVIGATION_BUTTON_LEFT)
 			lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
 		else if(buttonId == NAVIGATION_BUTTON_RIGHT)

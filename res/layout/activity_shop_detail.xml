@@ -11,12 +11,13 @@
 	<ScrollView
 	    android:layout_width="match_parent"
 	    android:layout_height="0dp"
-	    android:layout_weight="1">
+	    android:layout_weight="1"
+	    android:scrollbars="none"
+	    android:background="#ededed">
 	    <LinearLayout 
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:orientation="vertical"
-	        android:background="#ededed">
+	        android:orientation="vertical">
 	        <LinearLayout 
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
@@ -43,49 +44,75 @@
 	                    <ImageView
 	                        android:id="@+id/detail_shop_pic"
 	                        android:layout_width="wrap_content"
-	                        android:layout_height="wrap_content"
-	                        android:src="@drawable/ic_launcher"/>
+	                        android:layout_height="120dp"
+	                        android:padding="10dp"
+	                        />
 	                </LinearLayout>
 	                <LinearLayout 
 	                    android:layout_width="0dp"
 	                    android:layout_height="wrap_content"
 	                    android:layout_weight="2"
 	                    android:layout_gravity="center_vertical"
+	                    android:paddingRight="10dp"
 	                    android:orientation="vertical">
 	                    <TextView
 	                        android:layout_width="wrap_content"
 	                        android:layout_height="wrap_content"
-	                        android:textSize="15sp"
+	                        android:textSize="20sp"
 	                        android:textColor="#000000"
-	                        android:text="松鹤楼小馆（美罗店）"
 	                        android:id="@+id/detail_shop_name"/>
 	                    <LinearLayout 
-	                        android:layout_width="wrap_content"
+	                        android:layout_width="match_parent"
 	                        android:layout_height="wrap_content"
 	                        android:orientation="horizontal"
-	                        android:layout_gravity="center_vertical"
+	                        android:layout_gravity="bottom"
 	                        android:layout_marginTop="5dp">
+	                        <TextView 
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:layout_gravity="center|left"
+	                            android:layout_marginRight="5dp"
+	                            android:text="评分:"
+	                            android:textSize="16sp"
+	                            android:textColor="#333333"/>
 	                        <com.aifengqiang.ui.ShopStarView
+	                            android:id="@+id/detail_shop_star"
 	                            android:layout_width="0dp"
+	                            android:layout_marginTop="5dp"
 	                            android:layout_height="wrap_content"
 	                            android:layout_weight="1"/>
+	                    </LinearLayout>
+	                    <LinearLayout 
+	                        android:layout_width="match_parent"
+	                        android:layout_height="wrap_content"
+	                        android:orientation="horizontal"
+	                        android:layout_gravity="bottom"
+	                        android:layout_marginTop="5dp">
 	                        <TextView 
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:layout_gravity="center|left"
+	                            android:text="消费:"
+	                            android:textSize="16sp"
+	                            android:textColor="#333333"/>
+	                    	<TextView 
 	                        	android:layout_width="wrap_content"
 	                        	android:layout_height="wrap_content"
-	                        	android:textSize="10sp"
-	                        	android:textColor="#999999"
-	                        	android:text="人均￥100元"
+	                        	android:layout_marginLeft="5dp"
+	                        	android:lines="1"
+	                        	android:textSize="16sp"
+	                        	android:textColor="#f88727"
 	                        	android:id="@+id/detail_shop_cost"
-	                        	/>
+	                      	/>
 	                    </LinearLayout>
 	                    <TextView
 	                        android:layout_width="wrap_content"
 	                        android:layout_height="wrap_content"
-	                        android:textSize="10sp"
+	                        android:textSize="12sp"
 	                        android:textColor="#999999"
-	                        android:text="口味:3 环境：3 服务：3"
-	                        android:id="@+id/detail_shop_evaluate"
 	                        android:layout_marginTop="5dp"
+	                        android:lines="1"
+	                        android:id="@+id/detail_shop_evaluate"
 	                        />
 	                </LinearLayout>
 	            </LinearLayout>
@@ -96,25 +123,31 @@
 	                android:background="#dedede"/>
 	            <LinearLayout 
 	                android:layout_width="match_parent"
-	                android:layout_height="40dp"
+	                android:layout_height="wrap_content"
 	                android:orientation="horizontal"
 	                android:gravity="center_vertical"
 	                android:layout_marginLeft="10dp"
 	                android:layout_marginRight="10dp"
 	                >
+	                <ImageView 
+	                    android:layout_width="25dp"
+	                    android:layout_height="25dp"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/restar"/>
 	                <TextView 
 	                    android:layout_width="wrap_content"
 	                    android:layout_height="wrap_content"
-	                    android:text="分类:"
+	                    android:text="特色:"
 	                    android:textColor="#000000"
-	                    android:textSize="15sp"
+	                    android:textSize="16sp"
 	                    android:layout_marginRight="10dp"/>
 	                <TextView 
 	                    android:layout_width="wrap_content"
 	                    android:layout_height="wrap_content"
-	                    android:text="商务 家庭 老店"
+	                    android:minHeight="40dp"
+	                    android:gravity="center_vertical"
 	                    android:textColor="#999999"
-	                    android:textSize="15sp"
+	                    android:textSize="16sp"
 	                    android:layout_marginRight="10dp"
 	                    android:id="@+id/detail_shop_class"/>
 	            </LinearLayout>
@@ -124,32 +157,43 @@
 	                android:layout_weight="1"
 	                android:background="#dedede"/>
 	            <LinearLayout 
+	                android:id="@+id/detail_shop_location"
 	                android:layout_width="match_parent"
-	                android:layout_height="40dp"
+	                android:layout_height="wrap_content"
 	                android:orientation="horizontal"
 	                android:gravity="center_vertical"
 	                android:layout_marginLeft="10dp"
 	                android:layout_marginRight="10dp"
+	                android:background="@drawable/background_color"
 	                >
+	                <ImageView
+	                    android:layout_width="25dp"
+	                    android:layout_height="25dp"
+	                    android:layout_gravity="center"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/resloc"/>
 	                <TextView 
 	                    android:layout_width="wrap_content"
 	                    android:layout_height="wrap_content"
 	                    android:text="地址:"
 	                    android:textColor="#000000"
-	                    android:textSize="15sp"
+	                    android:textSize="16sp"
 	                    android:layout_marginRight="10dp"/>
 	                <TextView 
+	                    android:id="@+id/detail_shop_address"
 	                    android:layout_width="wrap_content"
 	                    android:layout_height="wrap_content"
-	                    android:text="高新区长江路211号美罗百货3楼"
+	                    android:minHeight="40dp"
+	                    android:gravity="center_vertical"
 	                    android:textColor="#999999"
-	                    android:textSize="15sp"
+	                    android:textSize="16sp"
 	                    android:layout_weight="1"
 	                    android:layout_marginRight="10dp"/>
 	                <Button
 	                    android:layout_width="wrap_content"
-	                    android:layout_height="match_parent"
-	                    android:background="@drawable/icon_forward_bg"></Button>
+	                    android:layout_height="wrap_content"
+	                    android:layout_gravity="center_vertical"
+	                    android:background="@drawable/icon_arrow"></Button>
 	            </LinearLayout>
 	            <LinearLayout 
 	                android:layout_width="match_parent"
@@ -163,7 +207,7 @@
 	                android:layout_marginLeft="10dp"
 	                android:layout_marginRight="10dp"
 	                android:orientation="horizontal">
-	                <com.aifengqiang.ui.ShopDiscountView
+	                <com.aifengqiang.ui.LabelIconView
 	                    android:layout_width="0dp"
 	                    android:layout_height="wrap_content"
 	                    android:id="@+id/detail_shop_discount"
@@ -180,15 +224,18 @@
 	                    android:orientation="horizontal"
 	                    >
 	                    <ImageView
-	                        android:layout_width="wrap_content"
-	                        android:layout_height="wrap_content"
-	                        android:src="@drawable/ic_launcher"/>
+	                        android:layout_width="25dp"
+	                        android:layout_height="25dp"
+	                        android:layout_marginLeft="5dp"
+	                        android:layout_marginRight="5dp"
+	                        android:src="@drawable/icon_tel1"/>
 	                    <TextView
+	                        android:id="@+id/shop_detail_phoneNumber"
 	                        android:layout_width="wrap_content"
 	                        android:layout_height="wrap_content"
-	                        android:text="0512-62607798"
+	                        android:layout_gravity="center_vertical"
 	                        android:textColor="#000000"
-	                        android:textSize="15sp"></TextView>
+	                        android:textSize="16sp"></TextView>
 	                </LinearLayout>
 	            </LinearLayout>
 	            <LinearLayout 
@@ -203,22 +250,41 @@
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:orientation="vertical"
-	            android:background="#ffffff">
+	            android:background="@drawable/background_color"
+	            android:clickable="true"
+	            android:id="@+id/shop_detail_food_list">
 	            <LinearLayout 
 	                android:layout_width="match_parent"
 	                android:layout_height="0.5dp"
 	                android:layout_weight="1"
 	                android:background="#dedede"/>
-	            <TextView 
+	            <LinearLayout
 	                android:layout_width="match_parent"
 	                android:layout_height="wrap_content"
+	                android:orientation="horizontal"
 	                android:layout_marginLeft="10dp"
-	                android:layout_marginRight="10dp"
-	                android:layout_marginTop="10dp"
-	                android:layout_marginBottom="10dp"
-	                android:text="菜品"
-	                android:textColor="#666666"
-	                android:textSize="15sp"/>
+	                android:layout_marginRight="10dp">
+	                <ImageView
+	                    android:layout_width="25dp"
+	                    android:layout_height="25dp"
+	                    android:layout_gravity="center"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/resfood"/>
+	            	<TextView 
+	                	android:layout_width="0dp"
+	                	android:layout_weight="1"
+	                	android:layout_height="wrap_content"
+	                	android:layout_marginTop="10dp"
+	                	android:layout_marginBottom="10dp"
+	               	 	android:textColor="#000000"
+	               	 	android:id="@+id/detail_shop_food_text"
+	                	android:textSize="16sp"/>
+	                <Button
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_gravity="center_vertical"
+	                    android:background="@drawable/icon_arrow"></Button>
+	            </LinearLayout>
 	            <HorizontalScrollView
 	                android:layout_width="match_parent"
 	                android:layout_height="wrap_content"
@@ -227,29 +293,10 @@
 	                android:scrollbars="none"
 	                >
 	                <LinearLayout 
+	                	android:id="@+id/detail_shop_food_pic"
 	                    android:layout_width="wrap_content"
 	                    android:layout_height="wrap_content"
 	                    android:orientation="horizontal">
-	                    <ImageView
-	                        android:layout_width="100dp"
-	                        android:layout_height="100dp"
-	                        android:layout_marginRight="10dp"
-	                        android:src="@drawable/ic_launcher"/>
-	                    <ImageView
-	                        android:layout_width="100dp"
-	                        android:layout_height="100dp"
-	                        android:layout_marginRight="10dp"
-	                        android:src="@drawable/ic_launcher"/>
-	                    <ImageView
-	                        android:layout_width="100dp"
-	                        android:layout_height="100dp"
-	                        android:layout_marginRight="10dp"
-	                        android:src="@drawable/ic_launcher"/>
-	                    <ImageView
-	                        android:layout_width="100dp"
-	                        android:layout_height="100dp"
-	                        android:layout_marginRight="10dp"
-	                        android:src="@drawable/ic_launcher"/>
 	                </LinearLayout>
 	            </HorizontalScrollView>
 	            <LinearLayout 
@@ -271,16 +318,27 @@
 	                android:layout_height="0.5dp"
 	                android:layout_weight="1"
 	                android:background="#dedede"/>
-	            <TextView 
+	            <LinearLayout 
 	                android:layout_width="match_parent"
 	                android:layout_height="wrap_content"
+	                android:orientation="horizontal"
 	                android:layout_marginLeft="10dp"
-	                android:layout_marginRight="10dp"
-	                android:layout_marginTop="10dp"
-	                android:layout_marginBottom="10dp"
-	                android:text="环境"
-	                android:textColor="#666666"
-	                android:textSize="15sp"/>
+	                android:layout_marginRight="10dp">
+	                <ImageView
+	                    android:layout_width="25dp"
+	                    android:layout_height="25dp"
+	                    android:layout_gravity="center"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/resenv"/>
+	            	<TextView 
+	                	android:layout_width="match_parent"
+	                	android:layout_height="wrap_content"
+	                	android:layout_marginTop="10dp"
+	                	android:layout_marginBottom="10dp"
+	                	android:text="环境"
+	                	android:textColor="#000000"
+	                	android:textSize="16sp"/>
+	            </LinearLayout>
 	            <HorizontalScrollView
 	                android:layout_width="match_parent"
 	                android:layout_height="wrap_content"
@@ -289,29 +347,10 @@
 	                android:scrollbars="none"
 	                >
 	                <LinearLayout 
+	                    android:id="@+id/detail_shop_env_pic"
 	                    android:layout_width="wrap_content"
 	                    android:layout_height="wrap_content"
 	                    android:orientation="horizontal">
-	                    <ImageView
-	                        android:layout_width="100dp"
-	                        android:layout_height="100dp"
-	                        android:layout_marginRight="10dp"
-	                        android:src="@drawable/ic_launcher"/>
-	                    <ImageView
-	                        android:layout_width="100dp"
-	                        android:layout_height="100dp"
-	                        android:layout_marginRight="10dp"
-	                        android:src="@drawable/ic_launcher"/>
-	                    <ImageView
-	                        android:layout_width="100dp"
-	                        android:layout_height="100dp"
-	                        android:layout_marginRight="10dp"
-	                        android:src="@drawable/ic_launcher"/>
-	                    <ImageView
-	                        android:layout_width="100dp"
-	                        android:layout_height="100dp"
-	                        android:layout_marginRight="10dp"
-	                        android:src="@drawable/ic_launcher"/>
 	                </LinearLayout>
 	                
 	            </HorizontalScrollView>
@@ -322,6 +361,62 @@
 	                android:layout_marginTop="10dp"
 	                android:background="#dedede"/>
 	        </LinearLayout>
+	        
+	    	<LinearLayout 
+	            android:layout_marginTop="10dp"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:background="#ffffff">
+	            <LinearLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="0.5dp"
+	                android:layout_weight="1"
+	                android:background="#dedede"/>
+	            <LinearLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:orientation="horizontal"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="10dp">
+	                <ImageView
+	                    android:layout_width="25dp"
+	                    android:layout_height="25dp"
+	                    android:layout_gravity="center"
+	                    android:layout_marginRight="10dp"
+	                    android:src="@drawable/rescom"/>
+	            	<TextView 
+	                	android:id="@+id/detail_shop_review"
+	                	android:layout_width="match_parent"
+	                	android:layout_height="wrap_content"
+	                	android:layout_marginTop="10dp"
+	                	android:text="点评(0)"
+	                	android:layout_marginBottom="10dp"
+	                	android:textColor="#000000"
+	                	android:textSize="16sp"/>
+	            </LinearLayout>
+	            <LinearLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="10dp"
+	                android:orientation="vertical">
+	                <LinearLayout
+	                    android:id="@+id/shop_detail_comment_list"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="vertical"
+	                    android:background="@null"
+	                    android:divider="#dedede"
+	                    android:dividerHeight="0.5dp"/>
+	                </LinearLayout>
+	            </LinearLayout>
+	            <LinearLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="0.5dp"
+	                android:layout_weight="1"
+	                android:layout_marginBottom="10dp"
+	                android:background="#dedede"/>
 	    </LinearLayout>
 	</ScrollView>
 </LinearLayout>

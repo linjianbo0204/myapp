@@ -22,6 +22,7 @@ package com.aifengqiang.wheel;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.aifengqiang.data.GlobalData;
 import com.aifengqiang.main.R;
 
 import android.content.Context;
@@ -68,22 +69,22 @@ public class WheelView extends View {
 			0x00AAAAAA, 0x00AAAAAA };
 
 	/** Additional items height (is added to standard text item height) */
-	private static final int ADDITIONAL_ITEM_HEIGHT = 50;
+	private static final int ADDITIONAL_ITEM_HEIGHT = (int)(33*GlobalData.getIntance().getScale());
 
 	/** Text size */
-	private static final int TEXT_SIZE = 24;
+	private static final int TEXT_SIZE = (int)(15*GlobalData.getIntance().getScale());
 
 	/** Top and bottom items offset (to hide that) */
 	private static final int ITEM_OFFSET = TEXT_SIZE / 3;
 
 	/** Additional width for items layout */
-	private static final int ADDITIONAL_ITEMS_SPACE = 10;
+	private static final int ADDITIONAL_ITEMS_SPACE = (int)(10*GlobalData.getIntance().getScale());
 
 	/** Label offset */
-	private static final int LABEL_OFFSET = 15;
+	private static final int LABEL_OFFSET = (int)(15*GlobalData.getIntance().getScale());
 
 	/** Left and right padding value */
-	private static final int PADDING = 10;
+	private static final int PADDING = (int)(10*GlobalData.getIntance().getScale());
 
 	/** Default count of visible items */
 	private static final int DEF_VISIBLE_ITEMS = 3;
